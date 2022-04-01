@@ -1,0 +1,15 @@
+body {
+    font-family: 'Jost', sans-serif;
+}
+
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card img {
+  height: 250px;
+  object-fit: cover;
+}
