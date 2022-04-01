@@ -1,20 +1,23 @@
 ## shopyebusiness
 ****
-### Installing virtualenv
+#### Installing virtualenv
 
-###### ` py -m pip install --user virtualenv `
+    py -m pip install --user virtualenv 
 
-### Creating a virtual environmen
-###### ` py -m venv env `
+#### Creating a virtual environmen
+     py -m venv env 
 
-### Activating a virtual environment
-###### ` .\env\Scripts\activate `
+#### Activating a virtual environment
+    .\env\Scripts\activate 
+ 
+####  install requirements.txt
+    pip install -r requirements.txt 
 
-#### 
-###  install requirements.txt
-###### ` pip install -r requirements.txt `
+####  Run server
+    py manage.py runserver 
 
-###  Run server
-###### ` py manage.py runserver `
+
+####localhost: 
+    http://127.0.0.1:8000/
 ****
 
