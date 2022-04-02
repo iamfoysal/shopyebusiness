@@ -7,7 +7,7 @@ html,body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #f5f5f5;
+	background-color: #ffffff;
 }
 
 .singin-up-form{
@@ -16,7 +16,9 @@ html,body {
 	/* margin-top: 30px !important; */
 }
 
-.card-title{ font-weight:300; }
+.card-title{ 
+	font-weight:300;
+ }
 
 .singin-up-form-btn{
 	font-size: 14px;
@@ -38,9 +40,12 @@ html,body {
 }
 
 .sign-up{
-	
 	text-align:center;
-	padding:20px 0 0;
+}
+.sign-up > a{
+	
+	color: rgb(15, 108, 196) !important;
+
 }
 
 .alert{

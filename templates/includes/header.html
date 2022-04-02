@@ -1,6 +1,6 @@
 <nav class=" container navbar navbar-expand-lg fixed-top mb-5 d-block navbar-light bg-light ">
   <div class="container-fluid ">
-    <a class="navbar-brand" href="#">Shopy</a>
+    <a class="navbar-brand" href="#">ShopY</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -18,7 +18,8 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">My Account</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Order</a></li>
+            <li><a class="dropdown-item" href="#">Panding</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
@@ -26,7 +27,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">SIGNUP/LOGIN</a>
+          <a class="nav-link" href="{% url 'signin' %}">SIGNUP/LOGIN</a>
         </li>
       </ul>
       <form class="d-flex">

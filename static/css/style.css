@@ -6,19 +6,20 @@ body {
   margin-top: 4.5rem;
 }
 .truncate {
-  width: 250px;
+  width: auto;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .card img {
   height: 225px; 
   width: 100%;
   object-fit: cover;
 }
+.card-custom{
+  margin-bottom: 20px;
+}
 a{
   text-decoration: none !important;
   color: rgb(31, 27, 27);
-
 } 

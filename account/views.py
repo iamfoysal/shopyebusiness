@@ -6,6 +6,6 @@ def signin(request):
 
 
 def signup(request):
-    return render(request, 'account/singup.html')
+    return render(request, 'account/signup.html')
 
 
