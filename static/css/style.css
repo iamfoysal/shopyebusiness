@@ -3,14 +3,13 @@ body {
    
 }
 .body-product{
-  margin-top: 5rem;
+  margin-top: 4.5rem;
 }
 .truncate {
   width: 250px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding-right: 5px;
 }
 
 .card img {
