@@ -1,7 +1,10 @@
 body {
     font-family: 'Jost', sans-serif;
+   
 }
-
+.body-product{
+  margin-top: 5rem;
+}
 .truncate {
   width: 250px;
   white-space: nowrap;
@@ -10,6 +13,13 @@ body {
 }
 
 .card img {
-  height: 250px;
+  /* height: 250px; */
+
+  width: 100%;
   object-fit: cover;
 }
+a{
+  text-decoration: none !important;
+  color: rgb(31, 27, 27);
+
+} 
