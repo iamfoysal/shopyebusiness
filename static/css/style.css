@@ -10,11 +10,11 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-right: 5px;
 }
 
 .card img {
-  /* height: 250px; */
-
+  height: 225px; 
   width: 100%;
   object-fit: cover;
 }
