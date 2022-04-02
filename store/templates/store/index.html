@@ -15,34 +15,34 @@
         <li class="list-group-item active" aria-current="true">
           Category
         </li>
-            <li class="list-group-item">food</li>
-            <li class="list-group-item">Mobile Phone</li>
-        
+        {% for Category in categories %}
+            <li class="list-group-item">{{ category.title}}</li>
+            {% endfor %}
       </ul>
     </div>
     <div class="col-md-9">
       <div class="row">
-        
+        {% for product in products %}
         <div class="col-md-4">
           <div class="card">
-            
+            {% if product.image %}
             <img
               src="{{ product.image.url }}"
               class="card-img-top"
               alt="product"/>
-           
+            {% else %}
             <img
               src="{% static 'images/default-product.png' %}"
               class="card-img-top"
               alt="product"/>
-           
+           {% endif %}
             <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text truncate"></p>
+              <h5 class="card-title">{{ product.title }}</h5>
+              <p class="card-text truncate">{{ product.description }}</p>
 
               <div class="d-flex justify-content-between align-items-center my-3">
-                <small class="card-text text-decoration-line-through">$5445</small>
-                <h4 class="card-text">$ 500</h4>
+                <small class="card-text text-decoration-line-through">$ {{ product.price}}</small>
+                <h4 class="card-text">$ {{ product.discount_price}}</h4>
               </div>
 
               <div class="d-flex align-items-center">
@@ -52,7 +52,7 @@
             </div>
           </div>
         </div>
-        
+        {% endfor %}
       </div>
     </div>
   </div>
