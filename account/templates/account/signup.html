@@ -14,20 +14,18 @@
             <div class="card-text">
                 
                 <!-- <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div>  -->
-                <form class="singin-up-form">
+                <form method= "POST" class="singin-up-form">
+                    {% csrf_token %}
+
+                    {% for field in form %}
                     <div class="form-group p-2">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label >{{ field.label_tag }} </label>
+                        {{ field }}
+                    </div> 
+                    <div>
+                        {{ field.errors }}
                     </div>
-                    <div class="form-group p-2">
-                        <label >Password</label>
-                    
-                        <input type="password" class="form-control form-control-sm" placeholder="password">
-                    </div>
-                    <div class="form-group p-2">
-                        <label >Re-type Password</label>
-                        <input type="password" class="form-control form-control-sm" placeholder="re-password">
-                    </div>
+                    {% endfor %}
                     <button type="submit" class="singin-up-form-btn btn btn-primary btn-block">Submit</button>
                     <div class="sign-up">Already have an account? <a href="{% url 'signin' %}">login</a></div>
                 </form>
