@@ -2,6 +2,15 @@ body {
   font-family: 'Jost', sans-serif;
 
 }
+/* .heade-style{
+  background-color: #878f99;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+} */
+.login-out-btn{
+  margin-left: auto;
+}
 
 .body-product {
   margin-top: 4.5rem;

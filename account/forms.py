@@ -13,4 +13,3 @@ class CustomRegisterFrom(UserCreationForm):
 
         for name, field in self.fields.items():
             field.widget.attrs.update({'class': 'form-control'})
-        
