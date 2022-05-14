@@ -5,6 +5,8 @@ body {
 .nav-style{
   background: rgb(187, 184, 179);
   color: rgb(34, 29, 29);
+  padding-left: 2.5rem;
+  padding-right: 1.5rem;
 }
 /* .heade-style{
   background-color: #878f99;
