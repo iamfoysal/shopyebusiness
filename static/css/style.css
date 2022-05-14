@@ -2,6 +2,10 @@ body {
   font-family: 'Jost', sans-serif;
 
 }
+.nav-style{
+  background: rgb(187, 184, 179);
+  color: rgb(34, 29, 29);
+}
 /* .heade-style{
   background-color: #878f99;
   padding: 10px;
@@ -38,9 +42,7 @@ a {
   color: rgb(31, 27, 27);
 }
 
-.card-title-category {
 
-}
 
 
 .message {
@@ -56,7 +58,7 @@ a {
 }
 
 .message-success {
-  background: #222;
+  background: rgb(7, 202, 49);
   color: #fff;
   animation: autoHide 0s ease-in 4s forwards;
 }
