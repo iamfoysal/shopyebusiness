@@ -42,7 +42,6 @@ def signout(request):
     return redirect("signin")
 
 
-
 def account(request):
      customer = request.user.customer
      return render(request, 'account/account.html', {

@@ -14,15 +14,20 @@
 
     <!--search -->
     
-      
       <label class="open-search" for="open-search">
+        <form method="POST">
+          {% csrf_token %}
         <i class="fas fa-search"></i>
-        <input class="input-open-search" id="open-search" type="checkbox" name="menu" />
+        <!-- <input class="input-open-search" id="open-search"  type="submit" /> -->
+        <input class="input-open-search" id="open-search"  type="checkbox" name="menu" />
         <div class="search">
+          <input class="input-open-search" id="open-search"  type="submit" />
           <button class="button-search"><i class="fas fa-search"></i></button>
-          <input type="text" placeholder="What are you looking for?" class="input-search" />
+          <input type="text" placeholder="What are you looking for?"  class="input-search" name="search" required />
         </div>
+      </form>
       </label>
+   
     
     <!-- // search -->
     <nav class="nav-content">
@@ -53,7 +58,7 @@
           </label>
       </ul>
       </li>
-      <!-- <li class="nav-content-item"><a class="nav-content-link" href=""><i class="fas fa-heart"></i></a></li> -->
+      <li class="nav-content-item"><a class="nav-content-link" href=""><i class="fas fa-heart"></i></a></li>
       <li class="nav-content-item"><a class="nav-content-link" href=""><i class="fas fa-shopping-cart"></i></a></li>
       <!-- call to action -->
       </ul>

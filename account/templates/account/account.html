@@ -33,12 +33,10 @@
         </p>
         <a href="">Email : {{ customer.user.email }}</a>
     
-       
-
       </div>
       <div class="profile-card-ctr">
-        <button class="profile-card__button button--blue js-message-btn">Message</button>
-        <button class="profile-card__button button--orange">Follow</button>
+        <a class="profile-card__button button--blue js-message-btn" href="{% url 'account_update' %}">Edit Profile</a>
+        
       </div>
     </div>
   </div>
