@@ -6,7 +6,7 @@ from .models import Customer
 class CustomRegisterFrom(UserCreationForm):
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'username',  'password1']
+        fields = ['first_name', 'last_name', 'email', 'username',  'password1']
         #fields = "__all__"
 
     def __init__(self, *args, **kwargs):

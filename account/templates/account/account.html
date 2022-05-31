@@ -5,27 +5,44 @@
 {% block title %}Sign-In {% endblock %}
 
 {% block content %}
+ <div class="wrapper">
+    <div class="profile-sidebar col-md-2 mt-5">
+      <ul class="list-group">
+        <li class="list-group-item active" aria-current="true">My Account</li>
+        <li class="list-group-item"><a href="{% url 'account' %}">My Profile</a> </li>
+        <li class="list-group-item">My Order </li>
+        <li class="list-group-item"><a href="{% url 'account_update' %}">Update Profile</a></li>
+      </ul>
+    </div>
+  <div class="profile-card js-profile-card">
+    <div class="profile-card__img">
+      {% if customer.image %}
+      <img src="{{ customer.image.url }}" alt="profile card">
+      {% else %}
+      <img src="{% static '/images/avatar.jpeg' %}" alt="profile card">
+      {% endif %}
+      
+    </div>
 
-<div class="container my-3">
-    <div class="row">
-      <div class="col-md-4">
-        <ul class="list-group">
-          <li class="list-group-item active" aria-current="true">My Account</li>
-          <li class="list-group-item"><a href="{% url 'account' %}">My Profile</a> </li>
-          <li class="list-group-item">My Order </li>
-          <li class="list-group-item"><a href="{% url 'account_update' %}">Update Profile</a></li>
-        </ul>
+    <div class="profile-card__cnt js-profile-cnt">
+      <div class="profile-card__name">{{ customer.name }}</div>
+      <div class="profile-card__txt">Address: {{ customer.location }}</div>
+      <div class="profile-card__txt">
+        <p>
+        Phone: {{ customer.phone }}
+        </p>
+        <a href="">Email : {{ customer.user.email }}</a>
+    
+       
+
       </div>
-      <div class="col-md-8">
-         {% if customer.image %}
-          <img src="{{ customer.image.url }}" alt="" width="80" height="80"  />
-         {% else %}
-          <img src="{% static '/images/avatar.jpeg' %}" alt="" width="80" height="80" />
-         {% endif %}
-          <h3>{{ customer.name }}</h3>
-          <p>{{ customer.phone }}</p>
-          <p>{{ customer.location }}</p>
+      <div class="profile-card-ctr">
+        <button class="profile-card__button button--blue js-message-btn">Message</button>
+        <button class="profile-card__button button--orange">Follow</button>
       </div>
     </div>
- </div>
+  </div>
+
+</div>
+
 {% endblock %}

@@ -5,33 +5,46 @@
 {% block title %}Sign-In {% endblock %}
 
 {% block content %}
-
-<br><br><br>
-<div class="container my-3">
-    <div class="row">
-      <div class="col-md-4">
+<div class="wrapper">
+    <div class="profile-sidebar col-md-2 mt-5">
         <ul class="list-group">
-          <li class="list-group-item active" aria-current="true">My Account</li>
+            <li class="list-group-item active" aria-current="true">My Account</li>
             <li class="list-group-item"><a href="{% url 'account' %}">My Profile</a> </li>
-          <li class="list-group-item">My Order </li>
-           <li class="list-group-item"><a href="{% url 'account_update' %}">Update Profile</a></li>
+            <li class="list-group-item">My Order </li>
+            <li class="list-group-item"><a href="{% url 'account_update' %}">Update Profile</a></li>
         </ul>
-      </div>
-      <div class="col-md-8">
-          <div class="card p-4">
-            <h2 class="text-center">Update information</h2>
-                  <form method="post" enctype="multipart/form-data">
-                  {% csrf_token %}
-                  {% for field in form %}
-                  <div class="mb-3">
-                      <label for="email" class="form-label">{{ field.label_tag }}</label>
-                          {{ field }}
-                  </div>
-                 {% endfor %}
-                  <button type="submit" class="btn btn-primary">Update</button>
-              </form>
-        </div>
-      </div>
     </div>
- </div>
+    <div class="profile-card js-profile-card">
+        <div class="profile-card__img">
+            {% if customer.image %}
+            <img src="{{ customer.image.url }}" alt="profile card">
+            {% else %}
+            <img src="{% static '/images/avatar.jpeg' %}" alt="profile card">
+            {% endif %}
+
+        </div>
+
+        <div class="profile-card__cnt js-profile-cnt">
+            <div class="profile-card__name">Update information</div>
+            <div class="profile-card__txt"><strong>{{ customer.name }}</strong></div>
+            <div class="profile-card__txt"><strong>{{ customer.location }}</strong></div>
+            <div class="profile-card__txt"><strong>{{ customer.email }}</strong></div>
+            <div class="profile-card__txt"><strong>{{ customer.user.email }}</strong></div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                <div class="mb-3">
+                    <label for="email" style="float: left;" class="form-label ">{{ field.label_tag }}</label>
+                    {{ field }}
+                </div>
+                {% endfor %}
+                <button type="submit" class="profile-card__button button--blue js-message-btn">Update</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
 {% endblock %}

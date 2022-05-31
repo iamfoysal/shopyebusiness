@@ -32,10 +32,13 @@
           <label class="open-menu-login-account" for="open-menu-login-account">
 
             <input class="input-menu" id="open-menu-login-account" type="checkbox" name="menu" />
-
-            <i class="fas fa-user-circle"></i><span class="login-text"><a href="{% url 'signin' %}">Sign in</a>
-              <strong><a href="{% url 'signup' %}">Create Account</a></strong></span> <span class="item-arrow"></span>
-
+            {% if request.user.is_authenticated %}
+            <i class="fas fa-user-circle"></i><span class="login-text"><a href="{% url 'account' %}"> Account</a>
+              <strong><a href="{% url 'signout' %}"> Logout</a></strong></span> <span class="item-arrow"></span>
+              {% else %}
+            <i class="fas fa-user-circle"></i><span class="login-text"><a href="{% url 'signin' %}"> Sign in</a>
+              <strong><a href="{% url 'signup' %}"> Create Account</a></strong></span> <span class="item-arrow"></span>
+              {% endif %}
             <!-- submenu -->
             <ul class="login-list">
               {% if request.user.is_authenticated %}
@@ -50,7 +53,7 @@
           </label>
       </ul>
       </li>
-      <li class="nav-content-item"><a class="nav-content-link" href=""><i class="fas fa-heart"></i></a></li>
+      <!-- <li class="nav-content-item"><a class="nav-content-link" href=""><i class="fas fa-heart"></i></a></li> -->
       <li class="nav-content-item"><a class="nav-content-link" href=""><i class="fas fa-shopping-cart"></i></a></li>
       <!-- call to action -->
       </ul>
