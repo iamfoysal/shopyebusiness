@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
-from .forms import CustomRegisterFrom
+from .forms import CustomRegisterFrom, CustomerForm 
 from django.contrib import messages
 
 def signin(request):
@@ -40,4 +40,28 @@ def signout(request):
     logout(request)
     messages.success(request, "logout successfully.")
     return redirect("signin")
+
+
+
+def account(request):
+     customer = request.user.customer
+     return render(request, 'account/account.html', {
+          'customer': customer
+     })
+
+
+def account_update(request):
+    form = CustomerForm()
+    customer = request.user.customer
+
+    if request.method == 'POST':
+        form = CustomerForm(request.POST, request.FILES, instance=customer)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Profile updated.')
+
+    return render(request, 'account/update.html', {
+            'form': form,
+            'customer': customer
+    })
 

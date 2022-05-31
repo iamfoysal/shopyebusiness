@@ -1,11 +1,18 @@
 from django.shortcuts import render
 from .models import Product, Category
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q 
 
-@login_required(login_url='signin')
+# @login_required(login_url='signin')
 def index(request):
     products = Product.objects.order_by('-created_at')
     categories = Category.objects.all()
+    # search_Q = Product.objects.all()
+    # if request.method == 'POST':
+    #     search = request.POST.get('search')
+    #     results = search_Q.objects.filter(Q(title__icontains=search))
+    #     context =  { 'results': results, 'search': search}
+    #     return render(request, 'store/search-result.html', context) 
     context = {
                 'categories': categories, 
                 'products' : products,

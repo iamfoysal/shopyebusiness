@@ -6,60 +6,82 @@
 
 {% block content %}
 
-{% include 'includes/header.html'%}
-
-<div class="container">
-  <div class="row body-product">
-    <div class="col-md-3">
-      <ul class="list-group">
-        <li class="list-group-item active" aria-current="true">
-          Category
-        </li>
-        <li class="list-group-item "> 
-          <a class="" href="{% url 'index' %}">All Product</a>
-        </li>
-        {% for category in categories %}
-        <li class="list-group-item"> 
-          <!-- <a class="" href="{% url 'index' %}?category={{category.title}}">
-              {{category.title}}
-          </a> -->
-          <a href="{% url 'product_by_category' category.slug %}">{{ category.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
-
-
-    
-    <div class="col-md-9 ">
-      <div class="row">
-        {% for product in products %}
-        <div class="col-md-4">
-          <div class="card card-custom">
-            {% if product.image %}
-            <img src="{{ product.image.url }}" class="card-img-top" alt="product" />
-            {% else %}
-            <img src="{% static 'images/default-product.png' %}" class="card-img-top" alt="product" />
-            {% endif %}
-            <div class="card-body ">
-              <h5 class="card-title">{{ product.title }}</h5>
-              <small class="card-title-category">category :{{ product.category }}</small>
-              <p class="card-text truncate ">{{ product.description }}</p>
-
-              <div class="d-flex justify-content-between align-items-center my-3">
-                <small class="card-text text-decoration-line-through">$ {{ product.price}}</small>
-                <p class="card-text text-end">$ {{ product.discount_price}}</p>
-              </div>
-              <div class="d-flex justify-content-between">
-                <a href="#" class="btn btn-light btn-sm ">Details</a>
-                <a href="#" class="btn btn-dark btn-sm ">Add To Cart</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
+<div id="header-hero">
+  <div class="header-bg"> <img src="{% static 'images/theme post1.jpg' %}" alt="header-image" /> </div>
+  <div class="header-content">
+    <p class="heading-1">fashion collection 2017</p>
+    <h1>wellcome to brand<span class="logo-style">y</span> unique store</h1>
+    <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    <div class="button">
+      <p>shop now</p>
     </div>
   </div>
 </div>
+<!-- new card -->
+
+<section id="products">
+  <div class="container">
+    <div class="products-header">
+      <h2>popular products</h2>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+  
+    {% for product in products %}
+      <div class="product product-1">
+        {% if product.image %}
+      <figure> <img src="{{ product.image.url }}" alt="product-image">
+        {% else %}
+        <figure> <img src="{% static 'images/default-product.png' %}" alt="product-image">
+         {% endif %}
+         <figcaption>{{ product.title }}</figcaption>
+         <figcaption>{{ product.category }}</figcaption>
+        <p class="truncate ">{{ product.description }}</p>
+        <small class="card-text text-decoration-line-through">$ {{ product.price}}</small>
+        <p class="card-text text-end"></p>
+        <figcaption>$ {{ product.discount_price}}</figcaption>
+         <div class="d-flex justify-content-between">
+          <a href="#" class="btn btn-light btn-sm ">Details</a>
+          <a href="#" class="btn btn-dark btn-sm ">Add To Cart</a>
+        </div>
+      </figure>
+    </div>
+    {% endfor %}
+<!-- <br>
+    <section id="collections">
+  <div class="container">
+    <div class="c-1">
+      <div class="c-1-image-holder"> <img src="https://res.cloudinary.com/de8cuyd0n/image/upload/v1520412550/E-commerce%20landing%20page/suit-collections/suit-collection-img_3x.jpg" alt="image"> </div>
+    </div>
+    <div class="c-2">
+      <h2>featured collection</h2>
+      <hr/>
+      <div class="c-2-image-holder"> <img class="left" src="https://res.cloudinary.com/de8cuyd0n/image/upload/v1520412552/E-commerce%20landing%20page/suit-collections/collection-2-img_3x.jpg" alt=""><img class="right" src="https://res.cloudinary.com/de8cuyd0n/image/upload/v1520412552/E-commerce%20landing%20page/suit-collections/collection-1-img_3x.jpg"
+         alt=""></div>
+      <p class="button">view all collections</p>
+    </div>
+  </div>
+</section>	 -->
+    <hr>
+<section id="summer-collection">
+  <div class="summer-container">
+    <div class="sc-content">
+      <h1>summer collection</h1>
+      <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+        has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      <a href="#">discover now</a> </div>
+    <div class="sc-media">
+      <div class="sc-media-bg"> <img src="https://res.cloudinary.com/de8cuyd0n/image/upload/v1520412556/E-commerce%20landing%20page/summer-collection/cold-fashion-man-women_3x.jpg" alt="sc-image" /> </div>
+    </div>
+  </div>
+</section>	
+</section>
+
+
+
+
+
+
+
+
+
 {% endblock %}

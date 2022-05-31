@@ -13,7 +13,7 @@ html,body {
 .singin-up-form{
 	padding-top: 15px !important;
 	font-size: 16px !important;
-	/* margin-top: 30px !important; */
+
 }
 
 .card-title{ 
@@ -53,3 +53,6 @@ html,body {
 	font-size: 13px;
 	margin-top:20px;
 }
+.login-out-btn{
+	margin-left: auto;
+  }

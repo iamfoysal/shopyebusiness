@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Sign-In {% endblock %}
+
+{% block content %}
+
+<div class="container my-3">
+    <div class="row">
+      <div class="col-md-4">
+        <ul class="list-group">
+          <li class="list-group-item active" aria-current="true">My Account</li>
+          <li class="list-group-item"><a href="{% url 'account' %}">My Profile</a> </li>
+          <li class="list-group-item">My Order </li>
+          <li class="list-group-item"><a href="{% url 'account_update' %}">Update Profile</a></li>
+        </ul>
+      </div>
+      <div class="col-md-8">
+         {% if customer.image %}
+          <img src="{{ customer.image.url }}" alt="" width="80" height="80"  />
+         {% else %}
+          <img src="{% static '/images/avatar.jpeg' %}" alt="" width="80" height="80" />
+         {% endif %}
+          <h3>{{ customer.name }}</h3>
+          <p>{{ customer.phone }}</p>
+          <p>{{ customer.location }}</p>
+      </div>
+    </div>
+ </div>
+{% endblock %}
