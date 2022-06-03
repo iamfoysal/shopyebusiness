@@ -1,15 +1,18 @@
-#ShopYebusiness
+## ShopYebusiness
 ****
 ### **_`It is a E-commerce web applocation and api made in django and django rest framework or stripe payment system.`_**
 
-#feature:
+# feature:
+
  And ongoing project development with product search, product shows by category, add to carts, checkouts, etc.
 Account Creation, Updated Account Information
 
-####Profile: 
+#### Profile:
+
 ![](./logini..png)
 
-####Home: 
+#### Home: 
+
 ![](./Screenshot_1.png)
 
 #### Product Section: 
