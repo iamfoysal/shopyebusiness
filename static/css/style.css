@@ -641,6 +641,16 @@ header {
 	padding: 1rem 0rem 0rem;
 	text-transform: uppercase;
 }
+.add-to-card-main-card-btn{
+	display: block;
+	margin: 0;
+	padding: 8px;
+	border: none;
+}
+.add-to-card-main-card-btn:hover{
+	background:  #e7e8eb;
+	color: #e74c3c;
+}
 
 @media only screen and (max-width: 1024px) {
 	#products .container .product {

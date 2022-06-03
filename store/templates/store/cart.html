@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Cart Item{% endblock %}
+{% block content %}
+<div class="container my-5">
+    {% if items %}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Price</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in items %}
+          <tr>
+            <td>{{ item.product.title }}</td>
+            <td>$ {{ item.product.discount_price }}</td>
+            <td>
+                <button class="btn btn-primary cart-btn" data-id="{{ item.product.id }}" data-action="decrement">-</button>
+                <strong>{{ item.quantity }}</strong>
+                <button class="btn btn-primary cart-btn" data-id="{{ item.product.id }}" data-action="increment">+</button>
+            </td>
+            <td>$ {{ item.get_total }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+
+      <h4>Total Item: {{ order.get_cart_item }}</h4>
+      <h4>Payable Total: $ {{ order.get_cart_total }}</h4>
+
+
+      <a href="" class="btn btn-primary">Go to checkout</a>
+    {% else %}
+
+    <h4>Your cart is empty!</h4>
+    <a href="/" class="btn btn-primary">Continue shopping</a>
+    {% endif %}
+   </div>
+{% endblock %}

@@ -7,10 +7,10 @@
 {% block content %}
 
 <div id="header-hero">
-  <div class="header-bg"> <img src="{% static 'images/theme post1.jpg' %}" alt="header-image" /> </div>
+  <div class="header-bg"> <img src="{% static 'images/pexels-artem-beliaikin-1036856.jpg' %}" alt="header-image" /> </div>
   <div class="header-content">
     <p class="heading-1">fashion collection 2017</p>
-    <h1>wellcome to brand<span class="logo-style">y</span> unique store</h1>
+    <h1>wellcome to <span class="logo-style">ShopY </span> store</h1>
     <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
     <div class="button">
       <p>shop now</p>
@@ -40,8 +40,8 @@
         <p class="card-text text-end"></p>
         <figcaption>$ {{ product.discount_price}}</figcaption>
          <div class="d-flex justify-content-between">
-          <a href="#" class="btn btn-light btn-sm ">Details</a>
-          <a href="#" class="btn btn-dark btn-sm ">Add To Cart</a>
+          <a href="#" class="add-to-card-main-card-btn ">Details</a>
+          <button class="add-to-card-main-card-btn" data-id="{{ product.id }}" data-action="increment"><i class="fas fa-shopping-cart"></i></button>
         </div>
       </figure>
     </div>
@@ -62,25 +62,42 @@
   </div>
 </section>	 -->
     <hr>
-<section id="summer-collection">
-  <div class="summer-container">
-    <div class="sc-content">
-      <h1>summer collection</h1>
-      <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
-        has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-      <a href="#">discover now</a> </div>
-    <div class="sc-media">
-      <div class="sc-media-bg"> <img src="https://res.cloudinary.com/de8cuyd0n/image/upload/v1520412556/E-commerce%20landing%20page/summer-collection/cold-fashion-man-women_3x.jpg" alt="sc-image" /> </div>
+  <section id="summer-collection">
+    <div class="summer-container">
+      <div class="sc-content">
+        <h1>summer collection</h1>
+        <p class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
+          has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+        <a href="#">discover now</a> </div>
+      <div class="sc-media">
+        <div class="sc-media-bg"> <img src="https://res.cloudinary.com/de8cuyd0n/image/upload/v1520412556/E-commerce%20landing%20page/summer-collection/cold-fashion-man-women_3x.jpg" alt="sc-image" /> </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="row">
+    <div class="col-md-10">
+  
+      <div class="pagination">
+          <span class="step-links">
+              {% if products.has_previous %}
+                  <a href="?page=1">&laquo; first</a>
+                  <a href="?page={{ products.previous_page_number }}">previous</a>
+              {% endif %}
+  
+              <span class="current">
+                  Page {{ products.number }} of {{ products.paginator.num_pages }}.
+              </span>
+  
+              {% if products.has_next %}
+                  <a href="?page={{ products.next_page_number }}">next</a>
+                  <a href="?page={{ products.paginator.num_pages }}">last &raquo;</a>
+              {% endif %}
+          </span>
+      </div>
     </div>
   </div>
-</section>	
 </section>
-
-
-
-
-
-
 
 
 

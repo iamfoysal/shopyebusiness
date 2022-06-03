@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
+# template 
+temp.html
+temp-copy.html
 
 # C extensions
 *.so

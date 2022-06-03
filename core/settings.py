@@ -145,5 +145,6 @@ EMAIL_HOST_USER = 'shopybusiness.co@gmail.com'
 EMAIL_HOST_PASSWORD  = '#include<stdio.h>'
 DEFAULT_FROM_EMAIL  = 'ShopY Business <no-reply@django-shop.localhost>'
 
-
+STRIPE_PUBLIC_KEY = 'pk_test_51L5YGvJ0a8Mrt1tYs7k264jpctXYg2cisonisvuFV0Hp8xsr7WWoGMNlfzRNf0V4eNI9fOsDcQGeZuOro9IWyo8v00mIEDyUIz'
+STRIPE_SECRET_KEY = 'sk_test_51L5YGvJ0a8Mrt1tYBywavRXed8IONqBRZqPEE2NdujvcpbVdkSggBYurUTRJO5jKT4CmWcL2b9gWUwpF9B0IttJi000vqucL4k'
 
