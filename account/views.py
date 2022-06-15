@@ -17,7 +17,7 @@ def signin(request):
             return redirect('index')
 
         else:
-            messages.error(request, "Ei tor bhul hoiche!! Bal Thik kor")
+            messages.error(request, "Wrong password or user name! Please try Again")
 
     return render(request, 'account/signin.html')
 
